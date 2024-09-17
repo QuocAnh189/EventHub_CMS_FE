@@ -19,16 +19,7 @@ const MessageItem: FC<Props> = ({ avatar, name, content, time }) => {
         href='/messages'
       >
         <div className='h-12.5 w-12.5 rounded-full'>
-          <Image
-            width={112}
-            height={112}
-            src={avatar}
-            alt='User'
-            style={{
-              width: 'auto',
-              height: 'auto'
-            }}
-          />
+          <Image width={112} height={112} src={avatar} alt='User' />
         </div>
 
         <div>

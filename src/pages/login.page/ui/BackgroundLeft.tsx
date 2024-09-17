@@ -13,7 +13,17 @@ const BackgroundLeft = () => {
     <div className='hidden w-full xl:block xl:w-1/2'>
       <div className='px-26 py-17.5 text-center'>
         <Link className='mb-5.5 inline-block' href='/'>
-          <Image className='' src={logo} alt='Logo' width={176} height={32} />
+          <Image
+            className=''
+            src={logo}
+            alt='Logo'
+            width={176}
+            height={32}
+            style={{
+              width: 'auto',
+              height: 'auto'
+            }}
+          />
         </Link>
 
         <p className='2xl:px-20 text-black dark:text-white'>
@@ -22,11 +32,15 @@ const BackgroundLeft = () => {
 
         <span className='mt-15 inline-block'>
           <Image
-            className=''
             src={background}
             alt='background'
             width={550}
             height={350}
+            style={{
+              width: 'auto',
+              height: 'auto'
+            }}
+            priority
           />
         </span>
       </div>

@@ -1,7 +1,10 @@
 'use client'
 
+//redux
+import ReduxProvider from '@app/providers/ReduxProvider'
+
 //hooks
-import React, { useState, ReactNode } from 'react'
+import React, { useState } from 'react'
 
 //components
 import Sidebar from '@widgets/sidebar'
@@ -14,7 +17,7 @@ export default function MainLayout({
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   return (
-    <>
+    <ReduxProvider>
       <div className='flex'>
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
@@ -28,6 +31,6 @@ export default function MainLayout({
           </main>
         </div>
       </div>
-    </>
+    </ReduxProvider>
   )
 }

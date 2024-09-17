@@ -1,5 +1,7 @@
+//next
 import { Metadata } from 'next'
 
+//pages
 import ProfilePage from '@pages/profile.page'
 
 export const metadata: Metadata = {

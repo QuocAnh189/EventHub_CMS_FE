@@ -19,9 +19,9 @@ const MainProfile = () => {
             width={160}
             height={160}
             style={{
+              borderRadius: '50%',
               width: 'auto',
-              height: 'auto',
-              borderRadius: '50%'
+              height: 'auto'
             }}
             alt='profile'
           />

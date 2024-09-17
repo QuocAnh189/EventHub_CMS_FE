@@ -1,23 +1,7 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-import '../styles/global.css'
-
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'Event Hub',
-  description: 'Event Management Platform'
-}
-
-export function RootLayout({ children }: { children: React.ReactNode }) {
+export function AppLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>
-        <div className='min-h-screen dark:bg-boxdark-2 dark:text-bodydark'>
-          {children}
-        </div>
-      </body>
-    </html>
+    <div className='min-h-screen dark:bg-boxdark-2 dark:text-bodydark'>
+      {children}
+    </div>
   )
 }

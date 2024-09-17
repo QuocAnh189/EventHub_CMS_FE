@@ -11,6 +11,9 @@ import DropdownUser from './DropdownUser'
 //icons
 import { IconSearch } from '@shared/assets/svgs/ui/header/IconSearch'
 
+//assets
+import logo from '@shared/assets/images/logo_text.png'
+
 const Header = (props: {
   sidebarOpen: string | boolean | undefined
   setSidebarOpen: (arg0: boolean) => void
@@ -61,12 +64,7 @@ const Header = (props: {
           </button>
 
           <Link className='block flex-shrink-0 lg:hidden' href='/'>
-            <Image
-              width={32}
-              height={32}
-              src={'/images/logo/logo-icon.svg'}
-              alt='Logo'
-            />
+            <Image width={120} height={32} src={logo} alt='Logo' />
           </Link>
         </div>
 

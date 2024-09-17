@@ -37,8 +37,6 @@ const DropdownUser = () => {
             height={112}
             src='https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
             style={{
-              width: 'auto',
-              height: 'auto',
               borderRadius: '50%'
             }}
             alt='User'
