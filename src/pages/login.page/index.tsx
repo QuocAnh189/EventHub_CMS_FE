@@ -1,17 +1,14 @@
 import React from 'react'
 
-//next
-import { Metadata } from 'next'
-
 //layout
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
 import Breadcrumb from '@widgets/breadcrumbs'
+import BackgroundLeft from './ui/BackgroundLeft'
 
 //feature
 import LoginForm from '@features/form/login.form'
-import BackgroundLeft from './ui/BackgroundLeft'
 
 const LoginPage: React.FC = () => {
   return (

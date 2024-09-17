@@ -1,4 +1,4 @@
-import { IconDashboard } from '@shared/assets/svgs/ui/sidebar/IconDashBoard'
+import { IconDashboard } from '@shared/assets/svgs/ui/sidebar/IconDashboard'
 
 const routes = [
   {
