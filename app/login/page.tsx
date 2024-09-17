@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
-import HomePage from '@pages/home'
+import LoginPage from '@pages/login.page'
 
 export const metadata: Metadata = {
-  title: 'Event Hub | Home',
+  title: 'Event Hub | Login',
   description: ''
 }
 
 const SignUp: React.FC = () => {
-  return <HomePage />
+  return <LoginPage />
 }
 
 export default SignUp
