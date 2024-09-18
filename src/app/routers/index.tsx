@@ -69,7 +69,8 @@ const routes = [
         children: [
           { label: 'Customer List', route: '/customer-list' },
           { label: 'Admin List', route: '/admin-list' },
-          { label: 'Manage User', route: '/manage-user' }
+          { label: 'Manage User', route: '/manage-user' },
+          { label: 'Roles Permission', route: '/roles-permission' }
         ]
       },
       {
