@@ -2,15 +2,15 @@
 import { Metadata } from 'next'
 
 //page
-import HomePage from '@pages/home.page'
+import DashboardPage from '@pages/dashboard.page'
 
 export const metadata: Metadata = {
-  title: 'Event Hub | Home',
+  title: 'Event Hub | Dashboard',
   description: ''
 }
 
-const SignUp: React.FC = () => {
-  return <HomePage />
+const Dashboard: React.FC = () => {
+  return <DashboardPage />
 }
 
-export default SignUp
+export default Dashboard

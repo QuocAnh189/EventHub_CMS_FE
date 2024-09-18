@@ -1,11 +1,11 @@
 import React from 'react'
 
-const TestPage = () => {
+const TransactionComponent = () => {
   return (
     <div className='w-full flex justify-center items-center'>
-      {process.env.API_URL}
+      TransactionComponent
     </div>
   )
 }
 
-export default TestPage
+export default TransactionComponent

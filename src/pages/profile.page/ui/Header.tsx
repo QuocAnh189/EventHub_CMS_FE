@@ -1,4 +1,7 @@
-import React from 'react'
+'use client'
+
+//hooks
+import { useRouter } from 'next/navigation'
 
 //next
 import Image from 'next/image'
@@ -7,6 +10,7 @@ import Image from 'next/image'
 import bg_profile from '@shared/assets/images/bg_profile.png'
 
 const HeaderProfile = () => {
+  const router = useRouter()
   return (
     <div className='relative z-20 h-35 md:h-65'>
       <Image
@@ -15,10 +19,6 @@ const HeaderProfile = () => {
         className='h-full w-full rounded-tl-sm rounded-tr-sm object-cover object-center'
         width={970}
         height={260}
-        style={{
-          width: 'auto',
-          height: 'auto'
-        }}
       />
       <div className='absolute bottom-1 right-1 z-10 xsm:bottom-4 xsm:right-4'>
         <label
@@ -49,7 +49,7 @@ const HeaderProfile = () => {
               />
             </svg>
           </span>
-          <span>Edit</span>
+          <button onClick={() => router.push('/update-profile')}>Edit</button>
         </label>
       </div>
     </div>

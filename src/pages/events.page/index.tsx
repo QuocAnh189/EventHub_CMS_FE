@@ -2,14 +2,14 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TestPage from './ui/TestPage'
+import EventComponent from './ui/EventPage'
 
-const HomePage = () => {
+const EventPage = () => {
   return (
     <MainLayout>
-      <TestPage />
+      <EventComponent />
     </MainLayout>
   )
 }
 
-export default HomePage
+export default EventPage

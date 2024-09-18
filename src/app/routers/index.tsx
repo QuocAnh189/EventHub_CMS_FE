@@ -25,15 +25,15 @@ const routes = [
         icon: <IconCategory className='fill-current' />,
         label: 'Manage Categories',
         route: '#',
-        children: [{ label: 'Category', route: '/category' }]
+        children: [{ label: 'Category', route: '/categories' }]
       },
       {
         icon: <IconEvent className='fill-current' />,
         label: 'Manage Events',
         route: '#',
         children: [
-          { label: 'Products', route: '/events' },
-          { label: 'Ticket', route: '/ticket-event' },
+          { label: 'Event', route: '/events' },
+          { label: 'Ticket', route: '/tickets' },
           { label: 'Product Reviews', route: '/reviews' }
         ]
       },
@@ -50,12 +50,12 @@ const routes = [
       {
         icon: <IconTransaction className='fill-current' />,
         label: 'Transactions',
-        route: '/transaction'
+        route: '/transactions'
       },
       {
         icon: <IconPayment className='fill-current' />,
         label: 'Payment',
-        route: '/payment'
+        route: '/payments'
       }
     ]
   },

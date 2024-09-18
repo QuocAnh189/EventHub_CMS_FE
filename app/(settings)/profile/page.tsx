@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: ''
 }
 
-const SignUp: React.FC = () => {
+const Profile: React.FC = () => {
   return <ProfilePage />
 }
 
-export default SignUp
+export default Profile
