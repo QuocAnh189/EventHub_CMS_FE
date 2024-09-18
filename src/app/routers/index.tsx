@@ -34,7 +34,7 @@ const routes = [
         children: [
           { label: 'Event', route: '/events' },
           { label: 'Ticket', route: '/tickets' },
-          { label: 'Product Reviews', route: '/reviews' }
+          { label: 'Event Reviews', route: '/reviews' }
         ]
       },
       {

@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
+    "jsvectormap": "^1.6.0",
     "next": "14.2.11",
     "react": "^18",
+    "react-apexcharts": "^1.4.1",
     "react-dom": "^18",
     "react-redux": "^9.1.2",
     "sharp": "^0.33.5"
