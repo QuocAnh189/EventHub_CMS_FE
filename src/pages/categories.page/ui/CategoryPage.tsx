@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 //next
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 //component
 import Table from '@widgets/table'
@@ -16,54 +17,65 @@ import ActionColumn from '@widgets/table/column/ActionColumn'
 
 //interface
 import { ICategory } from '@entities/category'
+import DialogConfirm from '@widgets/dialog'
 
 const data: ICategory[] = [
   {
+    id: '1',
     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
     name: 'Music',
     status: 'active'
   },
   {
+    id: '2',
     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
     name: 'Sport',
     status: 'active'
   },
   {
+    id: '3',
     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
     name: 'Education',
     status: 'active'
   },
   {
+    id: '4',
     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
     name: 'Fashion',
     status: 'active'
   },
   {
+    id: '5',
     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
     name: 'Art',
     status: 'active'
   },
   {
+    id: '6',
     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
     name: 'Concert',
     status: 'active'
   },
   {
+    id: '7',
     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
     name: 'Festival',
     status: 'active'
   },
   {
+    id: '8',
     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
     name: 'Game',
     status: 'active'
   },
   {
+    id: '9',
     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
     name: 'Workshop',
     status: 'active'
   },
   {
+    id: '10',
     icon: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
     name: 'Dance',
     status: 'active'
@@ -71,6 +83,10 @@ const data: ICategory[] = [
 ]
 
 export default function TableCategories() {
+  const router = useRouter()
+
+  const [confirmDelete, setConfirmDelete] = useState(false)
+  const [currentCategory, setCurrentCategory] = useState<ICategory | null>(null)
   const [categories, setCategories] = useState<ICategory[]>(data)
 
   const [search, setSearch] = useState('')
@@ -79,6 +95,14 @@ export default function TableCategories() {
   useEffect(() => {
     console.log(search)
   }, [search])
+
+  const handleEdit = (id: string) => {
+    router.push(`/categories/${id}`)
+  }
+
+  const handleDelete = (id: string) => {
+    alert(id)
+  }
 
   return (
     <div className=''>
@@ -125,9 +149,28 @@ export default function TableCategories() {
           header='Action'
           rowEditor={true}
           style={{ width: '15%', textAlign: 'center' }}
-          body={ActionColumn}
+          body={(rowData) => (
+            <ActionColumn
+              id={rowData.id}
+              onEdit={(id) => handleEdit(id)}
+              onDelete={() => {
+                setCurrentCategory(rowData)
+                setConfirmDelete(true)
+              }}
+            />
+          )}
         />
       </Table>
+      {confirmDelete && (
+        <DialogConfirm
+          open={confirmDelete}
+          setOpen={setConfirmDelete}
+          title='Delete Category'
+          description={`Are you sure you want to delete ${currentCategory?.name}?`}
+          action='Delete'
+          handleDelete={(id) => handleDelete(id)}
+        />
+      )}
     </div>
   )
 }

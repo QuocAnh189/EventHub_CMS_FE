@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const ActionColumn = () => {
+interface Props {
+  id: string
+  onEdit: (id: string) => void
+  onDelete: (id: string) => void
+}
+
+const ActionColumn: FC<Props> = ({ id, onEdit, onDelete }) => {
   return (
     <div className='flex items-center gap-4'>
-      <i className='pi pi-pen-to-square' style={{ fontSize: '1rem' }}></i>
-      <i className='pi pi-trash' style={{ fontSize: '1rem' }}></i>
+      <i
+        onClick={() => onEdit(id)}
+        className='pi pi-pen-to-square'
+        style={{ fontSize: '1rem' }}
+      />
+      <i
+        onClick={() => onDelete(id)}
+        className='pi pi-trash'
+        style={{ fontSize: '1rem' }}
+      />
     </div>
   )
 }
