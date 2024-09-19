@@ -39,7 +39,7 @@ const routes = [
       },
       {
         icon: <IconOrder className='fill-current' />,
-        label: 'Orders',
+        label: 'Manage Orders',
         route: '#',
         children: [
           { label: 'All Orders', route: '/all-orders' },
@@ -49,12 +49,12 @@ const routes = [
       },
       {
         icon: <IconTransaction className='fill-current' />,
-        label: 'Transactions',
+        label: 'Manage Transactions',
         route: '/transactions'
       },
       {
         icon: <IconPayment className='fill-current' />,
-        label: 'Payment',
+        label: 'Manage Payment',
         route: '/payments'
       }
     ]
@@ -64,7 +64,7 @@ const routes = [
     menuItems: [
       {
         icon: <IconUser className='fill-current' />,
-        label: 'User',
+        label: 'Manage User',
         route: '#',
         children: [
           { label: 'Customer List', route: '/customer-list' },

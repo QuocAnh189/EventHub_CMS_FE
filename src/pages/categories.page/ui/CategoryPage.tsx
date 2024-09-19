@@ -70,7 +70,7 @@ const data: ICategory[] = [
   }
 ]
 
-export default function PaginatorBasicDemo() {
+export default function TableCategories() {
   const [categories, setCategories] = useState<ICategory[]>(data)
 
   const [search, setSearch] = useState('')
@@ -85,7 +85,7 @@ export default function PaginatorBasicDemo() {
       <div className='flex w-full justify-end'>
         <Link
           href='/categories/create'
-          className='inline-flex items-center justify-center rounded-md bg-primary px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10'
+          className='inline-flex items-center justify-center rounded-md bg-primary px-4 py-3 text-center font-medium text-white hover:bg-opacity-90 lg:px-6 xl:px-8'
         >
           Create
         </Link>

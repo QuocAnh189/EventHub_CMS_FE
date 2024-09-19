@@ -52,14 +52,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: Props) => {
         </div>
 
         <div className='no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear'>
-          <nav className='mt-5 px-4 py-4 lg:mt-9 lg:px-6'>
+          <nav className='no-scrollbar overflow-y-hidden mt-5 px-4 py-4 lg:mt-9 lg:px-6'>
             {routes.map((route, index: number) => (
               <div key={`route-${index}`}>
                 <h3 className='mb-4 ml-4 text-sm font-semibold text-bodydark2'>
                   {route.name}
                 </h3>
 
-                <ul className='mb-6 flex flex-col gap-1.5'>
+                <ul className='no-scrollbar mb-6 flex flex-col gap-1.5'>
                   {route.menuItems.map((menuItem, index: number) => (
                     <SidebarItem
                       key={index}
