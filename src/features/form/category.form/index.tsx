@@ -1,7 +1,9 @@
 'use client'
 import React, { FC } from 'react'
 
+//components
 import Select from '@widgets/select/SelectGroupTwo'
+import Image from 'next/image'
 
 const options = [
   { value: 'active', label: 'Active' },
@@ -24,9 +26,15 @@ const CategoryForm: FC<Props> = ({ id }) => {
           <h3 className='font-medium text-black dark:text-white'>Category</h3>
         </div>
         <div className='flex flex-col gap-5.5 p-6.5'>
-          <div>
+          <div className='space-y-4'>
+            <Image
+              src='https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
+              alt=''
+              width={100}
+              height={100}
+            />
             <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
-              Image
+              Icon
             </label>
             <input
               type='file'

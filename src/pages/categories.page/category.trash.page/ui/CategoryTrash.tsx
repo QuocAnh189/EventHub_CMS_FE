@@ -20,14 +20,15 @@ import CheckboxTable from '@widgets/input/CheckboxTable'
 //interface
 import { ICategory } from '@entities/category'
 
-import { dataActive } from '@shared/data/category'
+//data
+import { dataTrash } from '@shared/data/category'
 
-export default function TableCategories() {
+export default function TableCategoriesTrash() {
   const router = useRouter()
 
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false)
   const [currentCategory, setCurrentCategory] = useState<ICategory | null>(null)
-  const [categories, setCategories] = useState<ICategory[]>(dataActive)
+  const [categories, setCategories] = useState<ICategory[]>(dataTrash)
 
   const [search, setSearch] = useState<string>('')
   const [rowsNumber, setRowsNumber] = useState<number>(5)
@@ -37,12 +38,12 @@ export default function TableCategories() {
     console.log(search)
   }, [search])
 
-  const handleEdit = (id: string) => {
-    router.push(`/categories/${id}`)
+  const handleRestore = (id: string) => {
+    alert('Store ' + id)
   }
 
   const handleDelete = (id: string) => {
-    alert(id)
+    alert('Delete ' + id)
   }
 
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -66,9 +67,9 @@ export default function TableCategories() {
     <div className=''>
       <div className='flex w-full justify-end items-center gap-4'>
         <ButtonPrimary
-          title='View Trash'
+          title='View Active'
           onClick={() => {
-            router.push('/categories/trash')
+            router.push('/categories')
           }}
         />
         <ButtonPrimary
@@ -84,7 +85,7 @@ export default function TableCategories() {
         rows={5}
         rowsPerPageOptions={[5, 10, 25, 50]}
         tableStyle={{ minWidth: '50rem' }}
-        header={<HeaderSearch onChange={setSearch} />}
+        header={<HeaderSearch onChange={setSearch} isTrash={true} />}
         editMode='row'
         setRowsNumber={setRowsNumber}
       >
@@ -131,9 +132,10 @@ export default function TableCategories() {
           style={{ width: '15%', textAlign: 'center' }}
           body={(rowData) => (
             <ActionColumn
+              isTrash={true}
               id={rowData.id}
-              onEdit={(id) => handleEdit(id)}
-              onTrash={() => {
+              onRestore={(id) => handleRestore(id)}
+              onDelete={() => {
                 setCurrentCategory(rowData)
                 setConfirmDelete(true)
               }}
@@ -145,8 +147,8 @@ export default function TableCategories() {
         <DialogConfirm
           open={confirmDelete}
           setOpen={setConfirmDelete}
-          title='Trash Category'
-          description={`Are you sure you want to trash ${currentCategory?.name} category ?`}
+          title='Delete Category'
+          description={`Are you sure you want to delete ${currentCategory?.name} category ?`}
           action='Delete'
           handleDelete={(id) => handleDelete(id)}
         />
