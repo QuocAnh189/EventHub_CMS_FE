@@ -21,7 +21,7 @@ const Select: FC<Props> = ({ options = [], title }) => {
   return (
     <div>
       <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
-        Select Country
+        Select {title}
       </label>
 
       <div className='relative z-20 bg-white dark:bg-form-input'>

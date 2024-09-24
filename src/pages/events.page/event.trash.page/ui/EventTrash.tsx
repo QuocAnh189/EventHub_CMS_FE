@@ -20,7 +20,7 @@ import CheckboxTable from '@widgets/input/CheckboxTable'
 //interface
 import { IEvent } from '@entities/event'
 
-export default function TableEvent() {
+export default function TableEventsTrash() {
   const router = useRouter()
 
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false)

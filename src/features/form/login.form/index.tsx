@@ -1,9 +1,6 @@
 'use client'
 import React from 'react'
 
-//next
-import Link from 'next/link'
-
 //icon
 import { IconEmail } from '@shared/assets/svgs/ui/common/IconEmail'
 import { IconGoogle } from '@shared/assets/svgs/ui/common/IconGoogle'
@@ -70,15 +67,6 @@ const LoginForm = () => {
         </span>
         Sign in with Google
       </button>
-
-      <div className='mt-6 text-center'>
-        <p className='text-black dark:text-white'>
-          Don’t have any account?{' '}
-          <Link href='/auth/signup' className='text-primary'>
-            Sign Up
-          </Link>
-        </p>
-      </div>
     </form>
   )
 }

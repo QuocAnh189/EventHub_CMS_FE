@@ -1,9 +1,12 @@
 'use client'
 import React, { FC } from 'react'
 
+//next
+import Image from 'next/image'
+
 //components
 import Select from '@widgets/select/SelectGroupTwo'
-import Image from 'next/image'
+import ButtonPrimary from '@widgets/button/ButtonPrimary'
 
 const options = [
   { value: 'active', label: 'Active' },
@@ -19,9 +22,11 @@ const CategoryForm: FC<Props> = ({ id }) => {
 
   console.log(data)
 
+  const handleCreate = () => {}
+
   return (
     <div className='w-full'>
-      <div className='rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark'>
+      <div className='rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark mb-10'>
         <div className='border-b border-stroke px-6.5 py-4 dark:border-strokedark'>
           <h3 className='font-medium text-black dark:text-white'>Category</h3>
         </div>
@@ -56,6 +61,7 @@ const CategoryForm: FC<Props> = ({ id }) => {
           <Select title='Active' options={options} />
         </div>
       </div>
+      <ButtonPrimary title='Create' onClick={handleCreate} />
     </div>
   )
 }
