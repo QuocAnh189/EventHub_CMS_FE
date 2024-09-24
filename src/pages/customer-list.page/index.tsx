@@ -2,12 +2,12 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import CustomerListComponent from './ui/CustomerListComponent'
+import TableCustomer from './ui/TableCustomers'
 
 const CustomerListPage = () => {
   return (
     <MainLayout>
-      <CustomerListComponent />
+      <TableCustomer />
     </MainLayout>
   )
 }

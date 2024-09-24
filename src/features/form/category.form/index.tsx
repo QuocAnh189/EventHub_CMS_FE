@@ -61,7 +61,7 @@ const CategoryForm: FC<Props> = ({ id }) => {
           <Select title='Active' options={options} />
         </div>
       </div>
-      <ButtonPrimary title='Create' onClick={handleCreate} />
+      <ButtonPrimary title={id ? 'Update' : 'Create'} onClick={handleCreate} />
     </div>
   )
 }

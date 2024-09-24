@@ -6,7 +6,6 @@ import Image from 'next/image'
 
 //components
 import Select from '@widgets/select/SelectGroupTwo'
-import Switcher from '@widgets/switch/Switcher'
 import ButtonPrimary from '@widgets/button/ButtonPrimary'
 
 const options = [
@@ -18,8 +17,8 @@ interface Props {
   id: string | null
 }
 
-const EventForm: FC<Props> = ({ id }) => {
-  const data = id ? 'Update Category' : 'Create Category'
+const UserForm: FC<Props> = ({ id }) => {
+  const data = id ? 'Update User' : 'Create User'
 
   console.log(data)
 
@@ -27,21 +26,20 @@ const EventForm: FC<Props> = ({ id }) => {
 
   return (
     <div className='w-full'>
-      <div className='rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark'>
+      <div className='rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark mb-10'>
         <div className='border-b border-stroke px-6.5 py-4 dark:border-strokedark'>
-          <h3 className='font-medium text-black dark:text-white'>Event</h3>
+          <h3 className='font-medium text-black dark:text-white'>User</h3>
         </div>
         <div className='flex flex-col gap-5.5 p-6.5'>
           <div className='space-y-4'>
             <Image
               src='https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg'
               alt=''
-              width={200}
+              width={100}
               height={100}
-              className='w-full h-40 object-cover'
             />
             <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
-              Background Image
+              Avatar
             </label>
             <input
               type='file'
@@ -49,58 +47,24 @@ const EventForm: FC<Props> = ({ id }) => {
             />
           </div>
 
-          <div>
-            <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
-              Name
-            </label>
-            <input
-              type='text'
-              placeholder='Enter name'
-              className='w-full rounded-lg border-[1.5px] border-primary bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-form-input dark:text-white'
-            />
-          </div>
-
-          <div>
-            <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
-              Description
-            </label>
-            <input
-              type='textarea'
-              placeholder='Enter description'
-              className='w-full rounded-lg border-[1.5px] border-primary bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-form-input dark:text-white'
-            />
-          </div>
-
-          <div>
-            <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
-              Location
-            </label>
-            <input
-              type='textarea'
-              placeholder='Enter description'
-              className='w-full rounded-lg border-[1.5px] border-primary bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-form-input dark:text-white'
-            />
-          </div>
-
           <div className='flex items-center gap-8'>
             <div className='flex-1'>
               <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
-                Start time
+                Name
               </label>
               <input
-                type='date'
-                placeholder='Enter description'
+                type='text'
+                placeholder='Enter name'
                 className='w-full rounded-lg border-[1.5px] border-primary bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-form-input dark:text-white'
               />
             </div>
-
             <div className='flex-1'>
               <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
-                End time
+                Email
               </label>
               <input
-                type='date'
-                placeholder='Enter description'
+                type='text'
+                placeholder='Enter email'
                 className='w-full rounded-lg border-[1.5px] border-primary bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-form-input dark:text-white'
               />
             </div>
@@ -108,25 +72,33 @@ const EventForm: FC<Props> = ({ id }) => {
 
           <div className='flex items-center gap-8'>
             <div className='flex-1'>
-              <Select title='EventCycleType' options={options} />
+              <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
+                Full Name
+              </label>
+              <input
+                type='text'
+                placeholder='Enter Full name'
+                className='w-full rounded-lg border-[1.5px] border-primary bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-form-input dark:text-white'
+              />
             </div>
             <div className='flex-1'>
-              <Select title='EventPayment' options={options} />
+              <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
+                Phone
+              </label>
+              <input
+                type='text'
+                placeholder='Enter phone'
+                className='w-full rounded-lg border-[1.5px] border-primary bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-form-input dark:text-white'
+              />
             </div>
           </div>
 
           <div className='flex items-center gap-8'>
             <div className='flex-1'>
-              <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
-                isPublic
-              </label>
-              <Switcher />
+              <Select title='Gender' options={options} />
             </div>
             <div className='flex-1'>
-              <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
-                isDelete
-              </label>
-              <Switcher />
+              <Select title='Role' options={options} />
             </div>
           </div>
         </div>
@@ -136,4 +108,4 @@ const EventForm: FC<Props> = ({ id }) => {
   )
 }
 
-export default EventForm
+export default UserForm
