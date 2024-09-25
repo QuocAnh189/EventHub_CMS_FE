@@ -2,7 +2,7 @@
 import { Metadata } from 'next'
 
 //pages
-import CustomerTrashPage from '@pages/customer-list.page/customer-list.trash.page'
+import CustomerListTrashPage from '@pages/customer-list.page/customer-list.trash.page'
 
 export const metadata: Metadata = {
   title: 'Event Hub | CustomerList-Trash',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 const CustomerListTrash: React.FC = () => {
-  return <CustomerTrashPage />
+  return <CustomerListTrashPage />
 }
 
 export default CustomerListTrash

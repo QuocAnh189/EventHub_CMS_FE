@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: ''
 }
 
-const Ticket: React.FC = () => {
+const Tickets: React.FC = () => {
   return <TicketPage />
 }
 
-export default Ticket
+export default Tickets

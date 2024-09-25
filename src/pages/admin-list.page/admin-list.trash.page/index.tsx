@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableAdminTrash from './ui/TableAdminTrash'
+import TableAdminTrash from './ui/TableAdminListTrash'
 
 const AdminListTrashPage = () => {
   return (

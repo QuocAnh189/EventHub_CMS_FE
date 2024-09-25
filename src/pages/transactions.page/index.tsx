@@ -2,14 +2,14 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TransactionComponent from './ui/TransactionComponent'
+import TableTransactions from './ui/TableTransactions'
 
-const TransactionPage = () => {
+const TransactionsPage = () => {
   return (
     <MainLayout>
-      <TransactionComponent />
+      <TableTransactions />
     </MainLayout>
   )
 }
 
-export default TransactionPage
+export default TransactionsPage

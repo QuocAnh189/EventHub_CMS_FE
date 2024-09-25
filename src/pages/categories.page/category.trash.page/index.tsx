@@ -2,9 +2,9 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableCategoriesTrash from './ui/CategoryTrash'
+import TableCategoriesTrash from './ui/CategoriesTrash'
 
-const CategoryPageTrash = () => {
+const CategoriesTrashPage = () => {
   return (
     <MainLayout>
       <TableCategoriesTrash />
@@ -12,4 +12,4 @@ const CategoryPageTrash = () => {
   )
 }
 
-export default CategoryPageTrash
+export default CategoriesTrashPage

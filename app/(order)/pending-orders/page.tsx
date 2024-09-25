@@ -2,15 +2,15 @@
 import { Metadata } from 'next'
 
 //pages
-import AllPendingOrderPage from '@pages/all-pending-orders.page'
+import PendingOrdersPage from '@pages/all-pending-orders.page'
 
 export const metadata: Metadata = {
-  title: 'Event Hub | All Pending Order',
+  title: 'Event Hub | Pending Order',
   description: ''
 }
 
-const PendingOrder: React.FC = () => {
-  return <AllPendingOrderPage />
+const PendingOrders: React.FC = () => {
+  return <PendingOrdersPage />
 }
 
-export default PendingOrder
+export default PendingOrders

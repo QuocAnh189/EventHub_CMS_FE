@@ -2,12 +2,12 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableCustomerTrash from './ui'
+import TableCustomerListTrash from './ui/TableCustomerListTrash'
 
 const CustomerListTrashPage = () => {
   return (
     <MainLayout>
-      <TableCustomerTrash />
+      <TableCustomerListTrash />
     </MainLayout>
   )
 }

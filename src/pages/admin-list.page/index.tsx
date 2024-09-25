@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableAdmin from './ui/TableAdmin'
+import TableAdmin from './ui/TableAdminList'
 
 const AdminListPage = () => {
   return (

@@ -2,12 +2,12 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import AllCancelOrdersComponent from './ui/AllCancelOrdersComponent'
+import TableOrdersCancel from './ui/TableOrdersCancel'
 
 const AllCancelOrdersPage = () => {
   return (
     <MainLayout>
-      <AllCancelOrdersComponent />
+      <TableOrdersCancel />
     </MainLayout>
   )
 }

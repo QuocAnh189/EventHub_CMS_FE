@@ -2,9 +2,9 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableCategories from './ui/CategoryPage'
+import TableCategories from './ui/CategoriesPage'
 
-const CategoryPage = () => {
+const CategoriesPage = () => {
   return (
     <MainLayout>
       <TableCategories />
@@ -12,4 +12,4 @@ const CategoryPage = () => {
   )
 }
 
-export default CategoryPage
+export default CategoriesPage

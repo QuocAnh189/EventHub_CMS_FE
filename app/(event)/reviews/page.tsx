@@ -2,15 +2,15 @@
 import { Metadata } from 'next'
 
 //pages
-import ReviewPage from '@pages/reviews.page'
+import ReviewsPage from '@pages/reviews.page'
 
 export const metadata: Metadata = {
   title: 'Event Hub | Review',
   description: ''
 }
 
-const Review: React.FC = () => {
-  return <ReviewPage />
+const Reviews: React.FC = () => {
+  return <ReviewsPage />
 }
 
-export default Review
+export default Reviews

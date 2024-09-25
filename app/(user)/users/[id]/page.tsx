@@ -14,6 +14,7 @@ import EditUserPage from '@pages/manage-user.page/user.edit.page'
 
 const EditUser: React.FC = () => {
   const { id }: any = useParams<any>()
+
   return <EditUserPage id={id} />
 }
 

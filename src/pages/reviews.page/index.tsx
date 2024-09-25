@@ -2,12 +2,12 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import ReviewComponent from './ui/ReviewComponent'
+import TableReviews from './ui/TableReviews'
 
 const ReviewPage = () => {
   return (
     <MainLayout>
-      <ReviewComponent />
+      <TableReviews />
     </MainLayout>
   )
 }

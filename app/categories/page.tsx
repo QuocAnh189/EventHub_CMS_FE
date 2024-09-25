@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: ''
 }
 
-const Category: React.FC = () => {
+const Categories: React.FC = () => {
   return <CategoryPage />
 }
 
-export default Category
+export default Categories

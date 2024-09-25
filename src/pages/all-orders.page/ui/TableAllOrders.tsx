@@ -17,46 +17,40 @@ import DialogConfirm from '@widgets/dialog'
 import ButtonPrimary from '@widgets/button/ButtonPrimary'
 import CheckboxTable from '@widgets/input/CheckboxTable'
 
-//interface
-import { ICategory } from '@entities/category'
-
-//data
-import { dataTrash } from '@shared/data/category'
-
-export default function TableCategoriesTrash() {
+export default function TableAllOrders() {
   const router = useRouter()
 
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false)
-  const [currentCategory, setCurrentCategory] = useState<ICategory | null>(null)
-  const [categories, setCategories] = useState<ICategory[]>(dataTrash)
+  const [currentAllOrders, setCurrentAllOrders] = useState<any | null>(null)
+  const [orders, setOrders] = useState<any[]>([])
 
   const [search, setSearch] = useState<string>('')
   const [rowsNumber, setRowsNumber] = useState<number>(5)
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+  const [selectedOrders, setSelectedOrders] = useState<string[]>([])
 
   useEffect(() => {
     console.log(search)
   }, [search])
 
-  const handleRestore = (id: string) => {
-    alert('Store ' + id)
+  const handleEdit = (id: string) => {
+    router.push(`/orders/${id}`)
   }
 
   const handleDelete = (id: string) => {
-    alert('Delete ' + id)
+    alert(id)
   }
 
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
-      const allIds: string[] = categories.map((category) => category.id!)
-      setSelectedCategories(allIds)
+      const allIds: string[] = orders.map((AllOrders: any) => AllOrders.id!)
+      setSelectedOrders(allIds)
     } else {
-      setSelectedCategories([])
+      setSelectedOrders([])
     }
   }
 
   const handleSelectOne = (id: string) => {
-    setSelectedCategories((prevSelected) =>
+    setSelectedOrders((prevSelected) =>
       prevSelected.includes(id)
         ? prevSelected.filter((selectedId: string) => selectedId !== id)
         : [...prevSelected, id]
@@ -67,32 +61,26 @@ export default function TableCategoriesTrash() {
     <div className=''>
       <div className='flex w-full justify-end items-center gap-4'>
         <ButtonPrimary
-          title='View Active'
+          title='View Trash'
           onClick={() => {
-            router.push('/categories')
+            router.push('/all-orders/trash')
           }}
-        />
-        <ButtonPrimary
-          onClick={() => {
-            router.push('/categories/create')
-          }}
-          title='Create'
         />
       </div>
       <Table
-        value={categories}
+        value={orders}
         paginator
         rows={5}
         rowsPerPageOptions={[5, 10, 25, 50]}
         tableStyle={{ minWidth: '50rem' }}
-        header={<HeaderSearch onChange={setSearch} isTrash={true} />}
+        header={<HeaderSearch onChange={setSearch} />}
         editMode='row'
         setRowsNumber={setRowsNumber}
       >
         <Column
           header={
             <CheckboxTable
-              checked={selectedCategories.length === rowsNumber}
+              checked={selectedOrders.length === rowsNumber}
               handleClick={(e: React.ChangeEvent<HTMLInputElement>) =>
                 handleSelectAll(e)
               }
@@ -100,30 +88,55 @@ export default function TableCategoriesTrash() {
           }
           body={(rowData) => (
             <CheckboxTable
-              checked={selectedCategories.includes(rowData.id)}
+              checked={selectedOrders.includes(rowData.id)}
               handleClick={() => handleSelectOne(rowData.id)}
             />
           )}
-          style={{ width: '10%' }}
+          style={{ width: '5%' }}
         />
         <Column
-          field='icon'
-          header='Image'
+          field='invoiceId'
+          header='Invoice Id'
           filter
-          style={{ width: '25%' }}
+          style={{ width: '15%' }}
           body={ImageColumn}
         />
         <Column
-          field='name'
+          field='customer'
+          header='Customer'
           body={TextColumn}
-          header='Name'
           sortable
-          style={{ width: '25%' }}
+          style={{ width: '10%' }}
         />
         <Column
-          field='status'
-          header='Status'
-          style={{ width: '20%' }}
+          field='date'
+          body={TextColumn}
+          header='Date'
+          sortable
+          style={{ width: '10%' }}
+        />
+        <Column
+          field='eventQuantity'
+          header='Event Quantity'
+          style={{ width: '12%' }}
+          body={SwitchColumn}
+        />
+        <Column
+          field='orderStatus'
+          header='Order Status'
+          style={{ width: '12%' }}
+          body={SwitchColumn}
+        />
+        <Column
+          field='paymentStatus'
+          header='Payment Status'
+          style={{ width: '12%' }}
+          body={SwitchColumn}
+        />
+        <Column
+          field='paymentMethod'
+          header='Payment Method'
+          style={{ width: '15%' }}
           body={SwitchColumn}
         />
         <Column
@@ -132,11 +145,10 @@ export default function TableCategoriesTrash() {
           style={{ width: '15%', textAlign: 'center' }}
           body={(rowData) => (
             <ActionColumn
-              isTrash={true}
               id={rowData.id}
-              onRestore={(id) => handleRestore(id)}
-              onDelete={() => {
-                setCurrentCategory(rowData)
+              onEdit={(id) => handleEdit(id)}
+              onTrash={() => {
+                setCurrentAllOrders(rowData)
                 setConfirmDelete(true)
               }}
             />
@@ -147,8 +159,8 @@ export default function TableCategoriesTrash() {
         <DialogConfirm
           open={confirmDelete}
           setOpen={setConfirmDelete}
-          title='Delete Category'
-          description={`Are you sure you want to delete ${currentCategory?.name} category ?`}
+          title='Trash AllOrders'
+          description={`Are you sure you want to trash ${currentAllOrders?.name} AllOrders ?`}
           action='Delete'
           handleDelete={(id) => handleDelete(id)}
         />

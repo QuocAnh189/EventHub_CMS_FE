@@ -2,12 +2,12 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import PaymentComponent from './ui/PaymentComponent'
+import ManagePayments from './ui/ManagePayments'
 
 const PaymentPage = () => {
   return (
     <MainLayout>
-      <PaymentComponent />
+      <ManagePayments />
     </MainLayout>
   )
 }

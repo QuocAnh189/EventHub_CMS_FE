@@ -2,15 +2,15 @@
 import { Metadata } from 'next'
 
 //pages
-import CategoryPageTrash from '@pages/categories.page/category.trash.page'
+import CategoryTrashPage from '@pages/categories.page/category.trash.page'
 
 export const metadata: Metadata = {
   title: 'Event Hub | Category Trash',
   description: ''
 }
 
-const Category: React.FC = () => {
-  return <CategoryPageTrash />
+const CategoriesTrash: React.FC = () => {
+  return <CategoryTrashPage />
 }
 
-export default Category
+export default CategoriesTrash

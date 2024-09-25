@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: ''
 }
 
-const AdminList: React.FC = () => {
+const AdminListTrash: React.FC = () => {
   return <AdminListTrashPage />
 }
 
-export default AdminList
+export default AdminListTrash

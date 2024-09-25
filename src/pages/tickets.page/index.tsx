@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TicketComponent from './ui/TicketComponent'
+import TicketComponent from './ui/TableTickets'
 
 const TicketPage = () => {
   return (

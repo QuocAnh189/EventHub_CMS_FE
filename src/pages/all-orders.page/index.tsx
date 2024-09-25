@@ -2,12 +2,12 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import AllOrdersComponent from './ui/AllOrdersComponent'
+import TableAllOrders from './ui/TableAllOrders'
 
 const AllOrdersPage = () => {
   return (
     <MainLayout>
-      <AllOrdersComponent />
+      <TableAllOrders />
     </MainLayout>
   )
 }

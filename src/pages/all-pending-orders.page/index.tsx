@@ -2,14 +2,14 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import AllPendingOrdersComponent from './ui/AllPendingOrdersComponent'
+import TableOrdersPending from './ui/TableOrdersPending'
 
-const AllPendingOrderPage = () => {
+const PendingOrdersPage = () => {
   return (
     <MainLayout>
-      <AllPendingOrdersComponent />
+      <TableOrdersPending />
     </MainLayout>
   )
 }
 
-export default AllPendingOrderPage
+export default PendingOrdersPage

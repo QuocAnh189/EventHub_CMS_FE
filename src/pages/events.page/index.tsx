@@ -2,9 +2,9 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableEvents from './ui/EventPage'
+import TableEvents from './ui/TableEvents'
 
-const EventPage = () => {
+const EventsPage = () => {
   return (
     <MainLayout>
       <TableEvents />
@@ -12,4 +12,4 @@ const EventPage = () => {
   )
 }
 
-export default EventPage
+export default EventsPage

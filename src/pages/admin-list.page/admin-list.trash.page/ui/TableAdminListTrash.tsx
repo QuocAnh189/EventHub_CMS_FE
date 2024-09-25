@@ -20,7 +20,7 @@ import CheckboxTable from '@widgets/input/CheckboxTable'
 //interface
 import { ICategory } from '@entities/category'
 
-export default function TableAdmin() {
+export default function TableAdminListTrash() {
   const router = useRouter()
 
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false)
@@ -64,9 +64,9 @@ export default function TableAdmin() {
     <div className=''>
       <div className='flex w-full justify-end items-center gap-4'>
         <ButtonPrimary
-          title='View Trash'
+          title='View Active'
           onClick={() => {
-            router.push('/admin-list/trash')
+            router.push('/admin-list')
           }}
         />
       </div>
@@ -76,7 +76,7 @@ export default function TableAdmin() {
         rows={5}
         rowsPerPageOptions={[5, 10, 25, 50]}
         tableStyle={{ minWidth: '50rem' }}
-        header={<HeaderSearch onChange={setSearch} />}
+        header={<HeaderSearch isTrash={true} onChange={setSearch} />}
         editMode='row'
         setRowsNumber={setRowsNumber}
       >
@@ -150,8 +150,8 @@ export default function TableAdmin() {
         <DialogConfirm
           open={confirmDelete}
           setOpen={setConfirmDelete}
-          title='Trash Category'
-          description={`Are you sure you want to trash ${currentCategory?.name} category ?`}
+          title='Trash User'
+          description={`Are you sure you want to delete ${currentCategory?.name} user ?`}
           action='Delete'
           handleDelete={(id) => handleDelete(id)}
         />

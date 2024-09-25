@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: ''
 }
 
-const Order: React.FC = () => {
+const Orders: React.FC = () => {
   return <AllOrdersPage />
 }
 
-export default Order
+export default Orders

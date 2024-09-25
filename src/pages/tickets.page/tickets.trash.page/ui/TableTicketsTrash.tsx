@@ -1,11 +1,11 @@
 import React from 'react'
 
-const DashboardComponent = () => {
+const TableTicketsTrash = () => {
   return (
     <div className='w-full flex justify-center items-center'>
-      DashboardComponent
+      TableTicketTrash
     </div>
   )
 }
 
-export default DashboardComponent
+export default TableTicketsTrash

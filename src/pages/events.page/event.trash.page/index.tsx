@@ -2,14 +2,14 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableCategoriesTrash from './ui/EventTrash'
+import TableEventsTrash from './ui/EventsTrash'
 
-const EventPageTrash = () => {
+const EventsTrashPage = () => {
   return (
     <MainLayout>
-      <TableCategoriesTrash />
+      <TableEventsTrash />
     </MainLayout>
   )
 }
 
-export default EventPageTrash
+export default EventsTrashPage

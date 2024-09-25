@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: ''
 }
 
-const Payment: React.FC = () => {
+const Payments: React.FC = () => {
   return <PaymentPage />
 }
 
-export default Payment
+export default Payments

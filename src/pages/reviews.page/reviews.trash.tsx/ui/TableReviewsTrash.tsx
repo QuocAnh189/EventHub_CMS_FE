@@ -1,11 +1,11 @@
 import React from 'react'
 
-const TransactionComponent = () => {
+const TableReviewsTrash = () => {
   return (
     <div className='w-full flex justify-center items-center'>
-      TransactionComponent
+      TableReviewsTrash
     </div>
   )
 }
 
-export default TransactionComponent
+export default TableReviewsTrash
