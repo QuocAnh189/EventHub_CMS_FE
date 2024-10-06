@@ -15,6 +15,7 @@ import SwitchColumn from '@widgets/table/column/SwitchColumn'
 import ActionColumn from '@widgets/table/column/ActionColumn'
 import DialogConfirm from '@widgets/dialog'
 import CheckboxTable from '@widgets/input/CheckboxTable'
+import ButtonPrimary from '@widgets/button/ButtonPrimary'
 
 export default function TableAllOrdersTrash() {
   const router = useRouter()
@@ -56,6 +57,14 @@ export default function TableAllOrdersTrash() {
 
   return (
     <div className=''>
+      <div className='flex w-full justify-end items-center gap-4'>
+        <ButtonPrimary
+          title='View Active'
+          onClick={() => {
+            router.push('/all-orders')
+          }}
+        />
+      </div>
       <Table
         value={orders}
         paginator
@@ -84,54 +93,53 @@ export default function TableAllOrdersTrash() {
           style={{ width: '5%' }}
         />
         <Column
-          field='invoiceId'
-          header='Invoice Id'
-          filter
-          style={{ width: '15%' }}
-          body={ImageColumn}
-        />
-        <Column
           field='customer'
           header='Customer'
+          headerStyle={{ fontSize: '14px' }}
           body={TextColumn}
           sortable
-          style={{ width: '10%' }}
+          style={{ width: '15%' }}
         />
         <Column
           field='date'
-          body={TextColumn}
           header='Date'
+          headerStyle={{ fontSize: '14px' }}
+          body={TextColumn}
           sortable
           style={{ width: '10%' }}
         />
         <Column
           field='eventQuantity'
-          header='Event Quantity'
-          style={{ width: '12%' }}
+          header='Quantity'
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '10%' }}
         />
         <Column
           field='orderStatus'
           header='Order Status'
-          style={{ width: '12%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '10%' }}
         />
         <Column
           field='paymentStatus'
           header='Payment Status'
-          style={{ width: '12%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '12%' }}
         />
         <Column
           field='paymentMethod'
           header='Payment Method'
-          style={{ width: '15%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '15%' }}
         />
         <Column
           header='Action'
           rowEditor={true}
-          style={{ width: '15%', textAlign: 'center' }}
+          style={{ width: '10%', textAlign: 'center' }}
           body={(rowData) => (
             <ActionColumn
               id={rowData.id}

@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableCategories from './ui/CategoriesPage'
+import TableCategories from './ui/TableCategories'
 
 const CategoriesPage = () => {
   return (

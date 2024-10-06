@@ -101,37 +101,42 @@ export default function TableEvent() {
               handleClick={() => handleSelectOne(rowData.id)}
             />
           )}
-          style={{ width: '10%' }}
+          style={{ width: '5%' }}
         />
         <Column
           field='icon'
-          header='Image'
           filter
-          style={{ width: '20%' }}
+          header='Image'
+          headerStyle={{ fontSize: '14px' }}
           body={ImageColumn}
+          style={{ width: '20%' }}
         />
         <Column
           field='name'
-          body={TextColumn}
           header='Name'
+          headerStyle={{ fontSize: '14px' }}
           sortable
+          body={TextColumn}
           style={{ width: '20%' }}
         />
         <Column
           field='description'
-          body={TextColumn}
-          header='Description'
           sortable
-          style={{ width: '20%' }}
+          header='Description'
+          headerStyle={{ fontSize: '14px' }}
+          body={TextColumn}
+          style={{ width: '25%' }}
         />
         <Column
           field='status'
           header='Status'
-          style={{ width: '15%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '15%' }}
         />
         <Column
           header='Action'
+          headerStyle={{ fontSize: '14px' }}
           rowEditor={true}
           style={{ width: '15%', textAlign: 'center' }}
           body={(rowData) => (

@@ -91,54 +91,54 @@ export default function TableOrdersCancelTrash() {
           style={{ width: '5%' }}
         />
         <Column
-          field='invoiceId'
-          header='Invoice Id'
-          filter
-          style={{ width: '15%' }}
-          body={ImageColumn}
-        />
-        <Column
           field='customer'
           header='Customer'
+          headerStyle={{ fontSize: '14px' }}
           body={TextColumn}
           sortable
-          style={{ width: '10%' }}
+          style={{ width: '15%' }}
         />
         <Column
           field='date'
-          body={TextColumn}
           header='Date'
+          headerStyle={{ fontSize: '14px' }}
+          body={TextColumn}
           sortable
           style={{ width: '10%' }}
         />
         <Column
           field='eventQuantity'
-          header='Event Quantity'
-          style={{ width: '12%' }}
+          header='Quantity'
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '10%' }}
         />
         <Column
           field='orderStatus'
           header='Order Status'
-          style={{ width: '12%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '10%' }}
         />
         <Column
           field='paymentStatus'
           header='Payment Status'
-          style={{ width: '12%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '12%' }}
         />
         <Column
           field='paymentMethod'
           header='Payment Method'
-          style={{ width: '15%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '15%' }}
         />
         <Column
           header='Action'
+          headerStyle={{ fontSize: '14px' }}
           rowEditor={true}
-          style={{ width: '15%', textAlign: 'center' }}
+          style={{ width: '10%', textAlign: 'center' }}
           body={(rowData) => (
             <ActionColumn
               id={rowData.id}

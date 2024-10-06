@@ -2,12 +2,12 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TicketComponent from './ui/TableTickets'
+import TableTicket from './ui/TableTickets'
 
 const TicketPage = () => {
   return (
     <MainLayout>
-      <TicketComponent />
+      <TableTicket />
     </MainLayout>
   )
 }

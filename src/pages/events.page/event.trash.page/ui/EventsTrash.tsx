@@ -64,9 +64,9 @@ export default function TableEventsTrash() {
     <div className=''>
       <div className='flex w-full justify-end items-center gap-4'>
         <ButtonPrimary
-          title='View Trash'
+          title='View Active'
           onClick={() => {
-            router.push('/events/trash')
+            router.push('/events')
           }}
         />
         <ButtonPrimary
@@ -101,38 +101,43 @@ export default function TableEventsTrash() {
               handleClick={() => handleSelectOne(rowData.id)}
             />
           )}
-          style={{ width: '10%' }}
+          style={{ width: '5%' }}
         />
         <Column
           field='icon'
           header='Image'
+          headerStyle={{ fontSize: '14px' }}
           filter
-          style={{ width: '20%' }}
           body={ImageColumn}
+          style={{ width: '20%' }}
         />
         <Column
           field='name'
-          body={TextColumn}
-          header='Name'
           sortable
+          header='Name'
+          headerStyle={{ fontSize: '14px' }}
+          body={TextColumn}
           style={{ width: '20%' }}
         />
         <Column
           field='description'
-          body={TextColumn}
-          header='Description'
           sortable
-          style={{ width: '20%' }}
+          header='Description'
+          headerStyle={{ fontSize: '14px' }}
+          body={TextColumn}
+          style={{ width: '25%' }}
         />
         <Column
           field='status'
           header='Status'
-          style={{ width: '15%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '15%' }}
         />
         <Column
           header='Action'
           rowEditor={true}
+          headerStyle={{ fontSize: '14px' }}
           style={{ width: '15%', textAlign: 'center' }}
           body={(rowData) => (
             <ActionColumn

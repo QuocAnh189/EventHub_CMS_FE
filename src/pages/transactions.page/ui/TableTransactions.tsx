@@ -56,14 +56,6 @@ export default function TableTransactions() {
 
   return (
     <div className=''>
-      <div className='flex w-full justify-end items-center gap-4'>
-        <ButtonPrimary
-          title='View Trash'
-          onClick={() => {
-            router.push('/transactions/trash')
-          }}
-        />
-      </div>
       <Table
         value={transactions}
         paginator
@@ -93,38 +85,43 @@ export default function TableTransactions() {
         />
         <Column
           field='invoiceId'
-          header='Invoice Id'
           filter
-          style={{ width: '15%' }}
+          header='Invoice Id'
+          headerStyle={{ fontSize: '14px' }}
           body={ImageColumn}
+          style={{ width: '15%' }}
         />
         <Column
           field='transactionId'
-          header='Transaction Id'
-          body={TextColumn}
           sortable
+          header='Transaction Id'
+          headerStyle={{ fontSize: '14px' }}
+          body={TextColumn}
           style={{ width: '15%' }}
         />
         <Column
           field='paymentMethod'
-          body={TextColumn}
+          sortable
           header='Payment Method'
-          sortable
+          headerStyle={{ fontSize: '14px' }}
+          body={TextColumn}
           style={{ width: '15%' }}
         />
         <Column
           field='eventQuantity'
+          sortable
           header='Amount In Base Currency'
-          style={{ width: '15%' }}
-          sortable
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '20%' }}
         />
         <Column
           field='eventQuantity'
-          header='Amount In Real Currency'
-          style={{ width: '15%' }}
           sortable
+          header='Amount In Real Currency'
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '20%' }}
         />
       </Table>
       {confirmDelete && (

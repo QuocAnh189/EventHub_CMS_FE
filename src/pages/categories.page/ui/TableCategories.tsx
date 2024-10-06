@@ -22,7 +22,7 @@ import { ICategory } from '@entities/category'
 
 import { dataActive } from '@shared/data/category'
 
-export default function TableCategories() {
+export default function TableCategoriesTrash() {
   const router = useRouter()
 
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false)
@@ -103,30 +103,34 @@ export default function TableCategories() {
               handleClick={() => handleSelectOne(rowData.id)}
             />
           )}
-          style={{ width: '10%' }}
+          style={{ width: '5%' }}
         />
         <Column
           field='icon'
           header='Image'
-          filter
-          style={{ width: '25%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={ImageColumn}
+          style={{ width: '20%' }}
         />
         <Column
           field='name'
-          body={TextColumn}
-          header='Name'
+          filter
           sortable
+          header='Name'
+          headerStyle={{ fontSize: '14px' }}
+          body={TextColumn}
           style={{ width: '25%' }}
         />
         <Column
           field='status'
           header='Status'
-          style={{ width: '20%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '20%' }}
         />
         <Column
           header='Action'
+          headerStyle={{ fontSize: '14px' }}
           rowEditor={true}
           style={{ width: '15%', textAlign: 'center' }}
           body={(rowData) => (

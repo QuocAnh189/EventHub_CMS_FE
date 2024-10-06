@@ -95,45 +95,51 @@ export default function TableAdminList() {
               handleClick={() => handleSelectOne(rowData.id)}
             />
           )}
-          style={{ width: '10%' }}
+          style={{ width: '5%' }}
         />
         <Column
           field='icon'
           header='Avatar'
           filter
-          style={{ width: '15%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={ImageColumn}
+          style={{ width: '15%' }}
         />
         <Column
           field='name'
-          body={TextColumn}
-          header='Name'
           sortable
+          header='Name'
+          headerStyle={{ fontSize: '14px' }}
+          body={TextColumn}
           style={{ width: '15%' }}
         />
         <Column
           field='email'
-          header='Email'
-          style={{ width: '15%' }}
           sortable
+          header='Email'
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '15%' }}
         />
         <Column
           field='gender'
           header='Gender'
-          style={{ width: '15%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '15%' }}
         />
         <Column
           field='phoneNumber'
           header='Phone'
-          style={{ width: '15%' }}
+          headerStyle={{ fontSize: '14px' }}
           body={SwitchColumn}
+          style={{ width: '15%' }}
         />
         <Column
           header='Action'
+          headerStyle={{ fontSize: '14px' }}
           rowEditor={true}
-          style={{ width: '15%', textAlign: 'center' }}
+          style={{ width: '10%', textAlign: 'center' }}
           body={(rowData) => (
             <ActionColumn
               id={rowData.id}
