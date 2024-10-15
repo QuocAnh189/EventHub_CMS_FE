@@ -24,11 +24,11 @@ import { IGetParam, initGetParam } from '@shared/interfaces/common/index'
 //redux
 import { useGetCategoriesQuery } from '@app/redux/apis/category.api'
 
-export default function TableCategoriesTrash() {
+export default function TableCategories() {
   const router = useRouter()
 
   const [filter, setFilter] = useState<IGetParam>(initGetParam)
-  const { data, isSuccess } = useGetCategoriesQuery<any>(filter)
+  const { data, isSuccess } = useGetCategoriesQuery(filter)
 
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false)
   const [currentCategory, setCurrentCategory] = useState<ICategory | null>(null)

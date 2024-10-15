@@ -20,7 +20,7 @@ import CheckboxTable from '@widgets/input/CheckboxTable'
 //interface
 import { IEvent } from '@entities/event'
 
-export default function TableEvent() {
+export default function TableEvents() {
   const router = useRouter()
 
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false)
@@ -54,9 +54,7 @@ export default function TableEvent() {
 
   const handleSelectOne = (id: string) => {
     setSelectedEvents((prevSelected) =>
-      prevSelected.includes(id)
-        ? prevSelected.filter((selectedId: string) => selectedId !== id)
-        : [...prevSelected, id]
+      prevSelected.includes(id) ? prevSelected.filter((selectedId: string) => selectedId !== id) : [...prevSelected, id]
     )
   }
 
@@ -90,9 +88,7 @@ export default function TableEvent() {
           header={
             <CheckboxTable
               checked={selectedEvents.length === rowsNumber}
-              handleClick={(e: React.ChangeEvent<HTMLInputElement>) =>
-                handleSelectAll(e)
-              }
+              handleClick={(e: React.ChangeEvent<HTMLInputElement>) => handleSelectAll(e)}
             />
           }
           body={(rowData) => (

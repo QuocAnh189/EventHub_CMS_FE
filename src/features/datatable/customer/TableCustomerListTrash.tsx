@@ -20,7 +20,7 @@ import CheckboxTable from '@widgets/input/CheckboxTable'
 //interface
 import { ICategory } from '@entities/category'
 
-export default function TableCustomerTrash() {
+export default function TableCustomerListTrash() {
   const router = useRouter()
 
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false)
@@ -54,9 +54,7 @@ export default function TableCustomerTrash() {
 
   const handleSelectOne = (id: string) => {
     setSelectedCustomers((prevSelected) =>
-      prevSelected.includes(id)
-        ? prevSelected.filter((selectedId: string) => selectedId !== id)
-        : [...prevSelected, id]
+      prevSelected.includes(id) ? prevSelected.filter((selectedId: string) => selectedId !== id) : [...prevSelected, id]
     )
   }
 
@@ -84,9 +82,7 @@ export default function TableCustomerTrash() {
           header={
             <CheckboxTable
               checked={selectedCustomers.length === rowsNumber}
-              handleClick={(e: React.ChangeEvent<HTMLInputElement>) =>
-                handleSelectAll(e)
-              }
+              handleClick={(e: React.ChangeEvent<HTMLInputElement>) => handleSelectAll(e)}
             />
           }
           body={(rowData) => (

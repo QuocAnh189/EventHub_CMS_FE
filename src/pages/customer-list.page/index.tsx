@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableCustomerList from './ui/TableCustomerList'
+import TableCustomerList from '@features/datatable/customer/TableCustomerList'
 
 const CustomerListPage = () => {
   return (

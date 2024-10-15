@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableReviews from './ui/TableReviews'
+import TableReviews from '@features/datatable/review/TableReviews'
 
 const ReviewPage = () => {
   return (

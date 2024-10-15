@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableTransactionsTrash from './ui/TableTransactionsTrash'
+import TableTransactionsTrash from '@features/datatable/transaction/TableTransactionsTrash'
 
 const TransactionsTrashPage = () => {
   return (

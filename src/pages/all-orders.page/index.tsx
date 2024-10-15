@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableAllOrders from './ui/TableAllOrders'
+import TableAllOrders from '@features/datatable/order/TableAllOrders'
 
 const AllOrdersPage = () => {
   return (

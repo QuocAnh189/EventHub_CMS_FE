@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableReviewsTrash from './ui/TableReviewsTrash'
+import TableReviewsTrash from '@features/datatable/review/TableReviewsTrash'
 
 const ReviewsTrashPage = () => {
   return (

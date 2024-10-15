@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableTicketsTrash from './ui/TableTicketsTrash'
+import TableTicketsTrash from '@features/datatable/ticket/TableTicketsTrash'
 
 const TicketsTrashPage = () => {
   return (

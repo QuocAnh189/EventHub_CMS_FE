@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableAllOrdersTrash from './ui/TableAllOrdersTrash'
+import TableAllOrdersTrash from '@features/datatable/order/TableAllOrdersTrash'
 
 const AllOrdersTrashPage = () => {
   return (

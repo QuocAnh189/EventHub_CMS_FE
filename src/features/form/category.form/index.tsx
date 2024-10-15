@@ -1,5 +1,5 @@
 'use client'
-import React, { FC, use, useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 
 //next
 import Image from 'next/image'

@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableCustomerListTrash from './ui/TableCustomerListTrash'
+import TableCustomerListTrash from '@features/datatable/customer/TableCustomerListTrash'
 
 const CustomerListTrashPage = () => {
   return (

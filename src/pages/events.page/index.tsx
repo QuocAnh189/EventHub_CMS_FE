@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableEvents from './ui/TableEvents'
+import TableEvents from '@features/datatable/event/TableEvents'
 
 const EventsPage = () => {
   return (

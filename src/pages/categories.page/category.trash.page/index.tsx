@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableCategoriesTrash from './ui/TableCategoriesTrash'
+import TableCategoriesTrash from '@features/datatable/category/TableCategoriesTrash'
 
 const CategoriesTrashPage = () => {
   return (

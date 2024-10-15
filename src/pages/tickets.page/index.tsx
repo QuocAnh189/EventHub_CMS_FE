@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableTicket from './ui/TableTickets'
+import TableTicket from '@features/datatable/ticket/TableTickets'
 
 const TicketPage = () => {
   return (

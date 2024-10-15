@@ -2,7 +2,7 @@
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
 //components
-import TableOrdersPendingTrash from './ui/TableOrdersPendingTrash'
+import TableOrdersPendingTrash from '@features/datatable/order/TableOrdersPendingTrash'
 
 const PendingOrdersTrashPage = () => {
   return (
