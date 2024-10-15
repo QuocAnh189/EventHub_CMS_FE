@@ -13,8 +13,7 @@ import { IconNotify } from '@shared/assets/svgs/ui/header/IconNotify'
 
 const notification = {
   title: 'Edit your information in a swipe',
-  description:
-    'Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.',
+  description: 'Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.',
   time: '12 May, 2025'
 }
 
@@ -49,14 +48,12 @@ const DropdownNotification = () => {
             className={`absolute -right-27 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80`}
           >
             <div className='px-4.5 py-3'>
-              <h5 className='text-sm font-medium text-bodydark2'>
-                Notification
-              </h5>
+              <h5 className='text-sm font-medium text-bodydark2'>Notification</h5>
             </div>
 
             <ul className='flex h-auto flex-col overflow-y-auto'>
               {Array.from({ length: 5 }).map((_, i: number) => (
-                <NotificationItem {...notification} />
+                <NotificationItem key={i} {...notification} />
               ))}
             </ul>
           </div>

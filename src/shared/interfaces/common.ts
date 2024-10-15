@@ -36,26 +36,12 @@ export interface IListData<T> {
 
 export interface IMetadata {
   currentPage: number
-  hasNext: boolean
-  hasPrevious: boolean
-  pageSize: number
-  takeAll: boolean
-  totalCount: number
   totalPages: number
-}
-
-export interface IGetParam {
-  page: number
-  size: number
-  searches: string
   takeAll: boolean
-}
-
-export const initGetParam = {
-  page: 1,
-  size: 10,
-  searches: '',
-  takeAll: false
+  pageSize: number
+  totalCount: number
+  hasPrevious: boolean
+  hasNext: boolean
 }
 
 export interface IPagination {
@@ -66,9 +52,4 @@ export interface IPagination {
   currentPage: number
   setCurrentPage: (page: number) => void
   maxPage: number
-}
-
-export interface ISelect {
-  label: string
-  value: string
 }

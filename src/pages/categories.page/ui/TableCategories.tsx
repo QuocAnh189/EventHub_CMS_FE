@@ -6,36 +6,48 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 //component
+import { Skeleton } from 'primereact/skeleton'
 import Table from '@widgets/table'
 import HeaderSearch from '@widgets/table/HeaderSearch'
 import { Column } from 'primereact/column'
 import TextColumn from '@widgets/table/column/TextColumn'
 import ImageColumn from '@widgets/table/column/ImageColumn'
-import SwitchColumn from '@widgets/table/column/SwitchColumn'
 import ActionColumn from '@widgets/table/column/ActionColumn'
 import DialogConfirm from '@widgets/dialog'
 import ButtonPrimary from '@widgets/button/ButtonPrimary'
 import CheckboxTable from '@widgets/input/CheckboxTable'
 
 //interface
-import { ICategory } from '@entities/category'
+import { ICategory } from '@shared/interfaces/category/model'
+import { IGetParam, initGetParam } from '@shared/interfaces/common/index'
 
-import { dataActive } from '@shared/data/category'
+//redux
+import { useGetCategoriesQuery } from '@app/redux/apis/category.api'
 
 export default function TableCategoriesTrash() {
   const router = useRouter()
 
+  const [filter, setFilter] = useState<IGetParam>(initGetParam)
+  const { data, isSuccess } = useGetCategoriesQuery<any>(filter)
+
   const [confirmDelete, setConfirmDelete] = useState<boolean>(false)
   const [currentCategory, setCurrentCategory] = useState<ICategory | null>(null)
-  const [categories, setCategories] = useState<ICategory[]>(dataActive)
+  const [categories, setCategories] = useState<ICategory[]>([])
 
   const [search, setSearch] = useState<string>('')
   const [rowsNumber, setRowsNumber] = useState<number>(5)
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
 
   useEffect(() => {
-    console.log(search)
+    setFilter({ ...filter, searches: search })
   }, [search])
+
+  useEffect(() => {
+    console.log(data?.metadata)
+    if (data?.items) {
+      setCategories(data.items)
+    }
+  }, [data?.items])
 
   const handleEdit = (id: string) => {
     router.push(`/categories/${id}`)
@@ -56,9 +68,7 @@ export default function TableCategoriesTrash() {
 
   const handleSelectOne = (id: string) => {
     setSelectedCategories((prevSelected) =>
-      prevSelected.includes(id)
-        ? prevSelected.filter((selectedId: string) => selectedId !== id)
-        : [...prevSelected, id]
+      prevSelected.includes(id) ? prevSelected.filter((selectedId: string) => selectedId !== id) : [...prevSelected, id]
     )
   }
 
@@ -92,9 +102,7 @@ export default function TableCategoriesTrash() {
           header={
             <CheckboxTable
               checked={selectedCategories.length === rowsNumber}
-              handleClick={(e: React.ChangeEvent<HTMLInputElement>) =>
-                handleSelectAll(e)
-              }
+              handleClick={(e: React.ChangeEvent<HTMLInputElement>) => handleSelectAll(e)}
             />
           }
           body={(rowData) => (
@@ -109,7 +117,13 @@ export default function TableCategoriesTrash() {
           field='icon'
           header='Image'
           headerStyle={{ fontSize: '14px' }}
-          body={ImageColumn}
+          body={
+            isSuccess ? (
+              (rowData: ICategory) => <ImageColumn url={rowData.iconImageUrl} />
+            ) : (
+              <Skeleton width='10rem' className='mb-2' />
+            )
+          }
           style={{ width: '20%' }}
         />
         <Column
@@ -118,14 +132,26 @@ export default function TableCategoriesTrash() {
           sortable
           header='Name'
           headerStyle={{ fontSize: '14px' }}
-          body={TextColumn}
+          body={
+            isSuccess ? (
+              (rowData: ICategory) => <TextColumn text={rowData.name} />
+            ) : (
+              <Skeleton width='10rem' className='mb-2' />
+            )
+          }
           style={{ width: '25%' }}
         />
         <Column
-          field='status'
-          header='Status'
+          field='color'
+          header='Color'
           headerStyle={{ fontSize: '14px' }}
-          body={SwitchColumn}
+          body={
+            isSuccess ? (
+              (rowData: ICategory) => <TextColumn text={rowData.color} />
+            ) : (
+              <Skeleton width='10rem' className='mb-2' />
+            )
+          }
           style={{ width: '20%' }}
         />
         <Column

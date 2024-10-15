@@ -1,10 +1,13 @@
+// 'use client'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-//type
-import { CreateCategoryPayload } from '@shared/interfaces/category/payload'
+// //type
+// import { CreateCategoryPayload } from '@shared/interfaces/category/payload'
 
 //interface
 import { ICategory } from '@shared/interfaces/category/model'
+import { IListData } from '@shared/interfaces/common'
+import { IGetParam } from '@shared/interfaces/common/index'
 
 export const apiCategory = createApi({
   reducerPath: 'apiCategory',
@@ -24,7 +27,7 @@ export const apiCategory = createApi({
   keepUnusedDataFor: 20,
   tagTypes: ['Category'],
   endpoints: (builder) => ({
-    createCategory: builder.mutation<ICategory, CreateCategoryPayload>({
+    createCategory: builder.mutation<ICategory, FormData>({
       query: (data) => ({
         url: '/categories',
         method: 'POST',
@@ -33,13 +36,14 @@ export const apiCategory = createApi({
       invalidatesTags: ['Category']
     }),
 
-    getCategories: builder.query<ICategory[], void>({
-      query: () => ({
+    getCategories: builder.query<IListData<ICategory[]>, IGetParam>({
+      query: (params) => ({
         url: '/categories',
-        method: 'GET'
+        method: 'GET',
+        params
       }),
       providesTags: ['Category'],
-      transformResponse: (response: any) => response.data.items
+      transformResponse: (response: any) => response.data
     }),
 
     getCategoryById: builder.query<ICategory, string>({
@@ -47,16 +51,18 @@ export const apiCategory = createApi({
         url: `/categories/${categoryId}`,
         method: 'GET'
       }),
-      providesTags: ['Category']
+      providesTags: ['Category'],
+      transformResponse: (response: any) => response.data
     }),
 
-    updateCategory: builder.mutation<ICategory, Partial<ICategory>>({
-      query: (data) => ({
-        url: `/categories/${data.id}`,
+    updateCategory: builder.mutation<ICategory, { id: string; data: FormData }>({
+      query: ({ id, data }) => ({
+        url: `/categories/${id}`,
         method: 'PUT',
         body: data
       }),
-      invalidatesTags: ['Category']
+      invalidatesTags: ['Category'],
+      transformResponse: (response: any) => response.data
     }),
 
     deleteCategory: builder.mutation<any, string>({
@@ -64,7 +70,8 @@ export const apiCategory = createApi({
         url: `/categories/${categoryId}`,
         method: 'DELETE'
       }),
-      invalidatesTags: ['Category']
+      invalidatesTags: ['Category'],
+      transformResponse: (response: any) => response.data
     })
   })
 })

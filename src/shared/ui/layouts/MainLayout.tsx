@@ -9,6 +9,7 @@ import React, { useState } from 'react'
 //components
 import Sidebar from '@widgets/sidebar'
 import Header from '@widgets/header'
+import { ToastContainer } from 'react-toastify'
 
 //prime
 import { PrimeReactProvider } from 'primereact/api'
@@ -16,16 +17,14 @@ import { PrimeReactProvider } from 'primereact/api'
 import 'primereact/resources/themes/lara-light-cyan/theme.css'
 import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css'
+import 'react-toastify/dist/ReactToastify.min.css'
 
-export default function MainLayout({
-  children
-}: {
-  children: React.ReactNode
-}) {
+export default function MainLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   return (
     <ReduxProvider>
       <PrimeReactProvider>
+        <ToastContainer autoClose={1500} />
         <div className='flex'>
           <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
@@ -33,9 +32,7 @@ export default function MainLayout({
             <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
             <main>
-              <div className='mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10'>
-                {children}
-              </div>
+              <div className='mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10'>{children}</div>
             </main>
           </div>
         </div>

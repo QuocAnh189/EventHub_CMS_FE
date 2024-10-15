@@ -9,8 +9,7 @@ import MessageItem from './ui/MessageItem'
 import { IconMessage } from '@shared/assets/svgs/ui/header/IconMessage'
 
 const message = {
-  avatar:
-    'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
+  avatar: 'https://res.cloudinary.com/dadvtny30/image/upload/v1710062870/portfolio/frj9fscqteb90eumokqj.jpg',
   name: 'Mariya Desoja',
   content: 'I like your confidence 💪',
   time: '2min ago'
@@ -52,7 +51,7 @@ const DropdownMessage = () => {
 
             <ul className='flex h-auto flex-col overflow-y-auto'>
               {Array.from({ length: 5 }).map((_, i) => (
-                <MessageItem {...message} />
+                <MessageItem key={i} {...message} />
               ))}
             </ul>
           </div>

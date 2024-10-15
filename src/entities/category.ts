@@ -1,6 +1,8 @@
 export interface ICategory {
   id?: string
   name: string
-  status: string
-  icon: string
+  iconImageUrl: string
+  color: string
+  createdAt: Date
+  updatedAt: Date
 }

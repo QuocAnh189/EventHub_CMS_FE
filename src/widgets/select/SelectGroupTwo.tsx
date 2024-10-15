@@ -3,7 +3,7 @@ import React, { useState, FC } from 'react'
 
 //icon
 import { IconChevronDown } from '@shared/assets/svgs/ui/common/IconChevronDown'
-import { ISelect } from '@shared/interfaces/common'
+import { ISelect } from '@shared/interfaces/common/index'
 
 interface Props {
   title: string
@@ -20,9 +20,7 @@ const Select: FC<Props> = ({ options = [], title }) => {
 
   return (
     <div>
-      <label className='mb-3 block text-sm font-medium text-black dark:text-white'>
-        Select {title}
-      </label>
+      <label className='mb-3 block text-sm font-medium text-black dark:text-white'>Select {title}</label>
 
       <div className='relative z-20 bg-white dark:bg-form-input'>
         <select
@@ -39,11 +37,7 @@ const Select: FC<Props> = ({ options = [], title }) => {
             Select {title}
           </option>
           {options.map((option) => (
-            <option
-              key={option.value}
-              value={option.value}
-              className='text-body dark:text-bodydark'
-            >
+            <option key={option.value} value={option.value} className='text-body dark:text-bodydark'>
               {option.label}
             </option>
           ))}

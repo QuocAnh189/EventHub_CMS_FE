@@ -1,8 +1,13 @@
 import { InputText } from 'primereact/inputtext'
 import React from 'react'
 
-const TextColumn = (rowData: any) => {
-  return <div className=''>{rowData.name}</div>
+interface IProps {
+  text: string
+}
+
+const TextColumn = (props: IProps) => {
+  const { text } = props
+  return <div className=''>{text}</div>
 }
 
 export default TextColumn

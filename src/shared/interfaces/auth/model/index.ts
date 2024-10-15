@@ -1,7 +1,7 @@
-import { IUser } from '@shared/interfaces/user/model'
+// import { IUser } from '@shared/interfaces/user/model'
 
 export interface IAuth {
-  user: IUser
+  // user: IUser
   accessToken: string
   refreshToken: string
 }

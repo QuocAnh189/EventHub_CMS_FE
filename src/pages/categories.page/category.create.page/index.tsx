@@ -1,5 +1,3 @@
-'use client'
-
 //layout
 import MainLayout from '@shared/ui/layouts/MainLayout'
 
